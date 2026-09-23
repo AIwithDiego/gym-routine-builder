@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark theme colors */
+  --bg-app: #0D1117;
+  --bg-card: #161B22;
+  --bg-input: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --border-default: #30363D;
+  --accent-green: #10B981;
+  --accent-green-hover: #059669;
+  --status-warning: #F59E0B;
+  --status-error: #EF4444;
+
+  /* Legacy mappings */
+  --background: var(--bg-app);
+  --foreground: var(--text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bg-app: var(--bg-app);
+  --color-bg-card: var(--bg-card);
+  --color-bg-input: var(--bg-input);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-default: var(--border-default);
+  --color-accent-green: var(--accent-green);
+  --color-accent-green-hover: var(--accent-green-hover);
+  --color-status-warning: var(--status-warning);
+  --color-status-error: var(--status-error);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+}
+
+/* Utility classes */
+.tap-highlight-none {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Number input - hide spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Safe area insets for mobile */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 16px);
+}
+
+.bottom-nav-safe {
+  padding-bottom: calc(64px + max(env(safe-area-inset-bottom), 0px));
+}
