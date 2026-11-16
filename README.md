@@ -25,11 +25,9 @@ So I wrote a spec and had Claude Code build the whole thing in one go: routine b
 
 > I built a complete workout log. What I needed was a week with a shape and last time's number in front of me.
 
-<!-- TODO(Diego): confirm the "super app" framing. The facts found: the first commit added 54 files from a 400-line spec and a 544-line UX doc; the "boring" verdict came after a week of real use (date not in git). If there was an earlier, bigger version before this repo, add one line about it here. -->
-
 ## Research
 
-**What already exists.** Notes apps hold numbers but don't time rest or know what's due. Workout apps log sets well; what I was missing was a week with a plan in it and last time's weight in front of me, and a log alone doesn't give you that. <!-- TODO(Diego): name the apps you tried before building, if any. None are recorded in the project notes. -->
+**What already exists.** Notes apps hold numbers but don't time rest or know what's due. Workout apps log sets well; what I was missing was a week with a plan in it and last time's weight in front of me, and a log alone doesn't give you that.
 
 **Who it's for.** One person training on machines, phone in hand between sets. That meant 44 px touch targets, a dark screen, one action per screen, and weight that moves in 2.5 and 5 kg steps instead of a keyboard.
 
