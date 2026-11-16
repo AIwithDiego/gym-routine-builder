@@ -28,7 +28,7 @@ npm test         # Unit tests (node --test)
 ### Key Patterns
 
 **Routing Structure:**
-- `src/app/(tabs)/` - Main tabbed views with bottom navigation (Today, Routines, Build)
+- `src/app/(tabs)/` - Main tabbed views with bottom navigation (Today, Routines, Machines, Metrics); the routine builder lives in `src/app/build/`
 - `src/app/workout/[sessionId]/` - Full-screen workout player (no bottom nav)
 - `src/app/api/` - Route handlers that query Supabase as the signed-in user
 - `src/app/login/` - Email + password sign-in (no sign-up page)
