@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" role="img" aria-labelledby="t d">
+  <title id="t">How gym-routine-builder works</title>
+  <desc id="d">The phone signs in with Supabase Auth, then calls the app's API routes. A proxy refreshes the session and returns 401 to signed-out calls. Every route handler calls requireUser and queries Postgres as that user, where row-level security keeps rows to their owner and a members-only policy keeps out anyone not on the members list. At build time, a probe refuses to deploy if the anonymous role can read the gym schema.</desc>
+  <style>
+    .box { fill: #f6f8fa; stroke: #8c959f; stroke-width: 1.5; }
+    .db { fill: #e8f7f1; stroke: #10b981; stroke-width: 1.5; }
+    .h { font: 600 16px system-ui, -apple-system, Segoe UI, sans-serif; fill: #1f2328; }
+    .s { font: 13px system-ui, -apple-system, Segoe UI, sans-serif; fill: #57606a; }
+    .m { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #0a7f5a; }
+    .a { stroke: #57606a; stroke-width: 1.6; fill: none; marker-end: url(#ar); }
+    .g { stroke: #b45309; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; marker-end: url(#ag); }
+    .w { font: 12px system-ui, -apple-system, Segoe UI, sans-serif; fill: #b45309; }
+    .ah { fill: #57606a; } .agh { fill: #b45309; }
+    @media (prefers-color-scheme: dark) {
+      .box { fill: #161b22; stroke: #30363d; }
+      .db { fill: #0f2a22; stroke: #10b981; }
+      .h { fill: #f0f6fc; } .s { fill: #9ca3af; } .m { fill: #34d399; }
+      .a { stroke: #9ca3af; } .ah { fill: #9ca3af; }
+      .g { stroke: #f59e0b; } .w { fill: #f59e0b; } .agh { fill: #f59e0b; }
+    }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0L10 5L0 10z"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="agh" d="M0 0L10 5L0 10z"/></marker>
+  </defs>
+
+  <!-- Phone -->
+  <rect class="box" x="20" y="40" width="190" height="200" rx="18"/>
+  <text class="h" x="40" y="72">Phone</text>
+  <text class="s" x="40" y="98">Today: the day's routine</text>
+  <text class="s" x="40" y="120">Preview: last weight</text>
+  <text class="s" x="40" y="142">Player: set, rest, water</text>
+  <text class="s" x="40" y="164">Weekly plan, metrics</text>
+  <text class="m" x="40" y="196">TanStack Query</text>
+  <text class="m" x="40" y="216">Zustand player</text>
+
+  <!-- Proxy -->
+  <rect class="box" x="260" y="40" width="190" height="200" rx="12"/>
+  <text class="h" x="280" y="72">proxy.ts</text>
+  <text class="s" x="280" y="98">Refreshes the session</text>
+  <text class="s" x="280" y="120">Signed out: /login</text>
+  <text class="s" x="280" y="142">or 401 on /api/*</text>
+  <text class="s" x="280" y="176">The UX layer only.</text>
+  <text class="s" x="280" y="198">The real gates are next.</text>
+
+  <!-- API -->
+  <rect class="box" x="500" y="40" width="190" height="200" rx="12"/>
+  <text class="h" x="520" y="72">API routes</text>
+  <text class="m" x="520" y="98">requireUser()</text>
+  <text class="s" x="520" y="120">first, in every handler</text>
+  <text class="s" x="520" y="150">Anon key + the user's</text>
+  <text class="s" x="520" y="172">cookie: every query</text>
+  <text class="s" x="520" y="194">runs as that user</text>
+
+  <!-- Postgres -->
+  <rect class="db" x="740" y="40" width="200" height="200" rx="12"/>
+  <text class="h" x="760" y="72">Postgres: gym</text>
+  <text class="s" x="760" y="98">RLS on all 5 tables</text>
+  <text class="s" x="760" y="120">Owner-only rows</text>
+  <text class="m" x="760" y="146">*_members_only</text>
+  <text class="s" x="760" y="168">restrictive, ANDed in</text>
+  <text class="s" x="760" y="200">anon: no access</text>
+
+  <path class="a" d="M210 140 H256"/>
+  <path class="a" d="M450 140 H496"/>
+  <path class="a" d="M690 140 H736"/>
+
+  <!-- Auth -->
+  <rect class="box" x="20" y="290" width="215" height="64" rx="12"/>
+  <text class="h" x="40" y="318">Supabase Auth</text>
+  <text class="s" x="40" y="340">email + password, no sign-up</text>
+  <path class="a" d="M115 240 V286"/>
+
+  <!-- Build probe -->
+  <rect class="box" x="500" y="290" width="190" height="64" rx="12"/>
+  <text class="h" x="520" y="318">npm run build</text>
+  <text class="m" x="520" y="340">check-db-lockdown.mjs</text>
+  <path class="g" d="M690 322 H840 V244"/>
+  <text class="w" x="700" y="345">fails if anon can read gym</text>
+</svg>
