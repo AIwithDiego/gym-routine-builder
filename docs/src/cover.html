@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- README cover and social preview, 1280x640. Render: python3 docs/src/render.py -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono:wght@500;700&display=swap">
+<style>
+:root { --bg:#0D1117; --card:#161B22; --line:#30363D; --text:#F9FAFB; --dim:#9CA3AF; --green:#10B981; --amber:#F59E0B; }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1280px; height: 640px; }
+body { background: radial-gradient(900px 600px at 25% 35%, #0f2a22, var(--bg)); color: var(--text); font-family: "Geist", system-ui, sans-serif; display: grid; grid-template-columns: 590px 1fr; gap: 24px; padding: 60px 0 60px 64px; overflow: hidden; }
+.kicker { color: var(--green); font: 700 19px "Geist Mono", monospace; letter-spacing: .3px; }
+h1 { font-size: 45px; line-height: 1.12; margin-top: 18px; letter-spacing: -.5px; }
+h1 span { color: var(--green); }
+.num { margin-top: 34px; display: grid; gap: 14px; }
+.row { display: flex; align-items: baseline; gap: 16px; }
+.row b { font-size: 46px; line-height: 1; min-width: 170px; text-align: right; font-weight: 700; }
+.row span { font-size: 20px; color: var(--dim); }
+.amber b { color: var(--amber); }
+.green b { color: var(--green); }
+.foot { margin-top: 30px; font-size: 17px; color: var(--dim); }
+.phones { position: relative; }
+.phones img { position: absolute; width: 270px; border-radius: 26px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.p1 { left: 0; top: 40px; }
+.p2 { left: 300px; top: -10px; }
+</style></head>
+<body>
+  <div>
+    <div class="kicker">gym-routine-builder · case study</div>
+    <h1>I built the whole gym app first. What I needed was <span>a plan for the week.</span></h1>
+    <div class="num">
+      <div class="row"><b>54</b><span>files in the first commit</span></div>
+      <div class="row amber"><b>"boring"</b><span>the verdict after using it</span></div>
+      <div class="row green"><b>0</b><span>rows a signed-out visitor can read</span></div>
+    </div>
+    <p class="foot">Next.js, Supabase Auth, members-only row-level security.</p>
+  </div>
+  <div class="phones">
+    <img class="p1" src="../assets/today-planned-routine.png" alt="">
+    <img class="p2" src="../assets/routine-preview-last-weight.png" alt="">
+  </div>
+</body></html>
