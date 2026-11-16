@@ -1,5 +1,5 @@
 /**
- * Creates 6 routines tailored to Diego's goals:
+ * Creates 6 sample routines:
  *   1. Golf Hips & Core: hip rotation/mobility for the golf swing
  *   2. Shoulders & Delts: grow the shoulders
  *   3. Back Builder: thicker, wider back

@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Design tokens image, 1280x520. Values copied from src/app/globals.css. Render: python3 docs/src/render.py -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono:wght@500&display=swap">
+<style>
+:root { --bg-app:#0D1117; --bg-card:#161B22; --bg-input:#1F2937; --text-primary:#F9FAFB; --text-secondary:#9CA3AF; --border-default:#30363D; --accent-green:#10B981; --accent-green-hover:#059669; --status-warning:#F59E0B; --status-error:#EF4444; }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1280px; height: 520px; }
+body { background: var(--bg-app); color: var(--text-primary); font-family: "Geist", system-ui, sans-serif; padding: 44px 56px; }
+h2 { font-size: 15px; font-weight: 500; color: var(--text-secondary); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; }
+.sw { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.s { border: 1px solid var(--border-default); border-radius: 14px; overflow: hidden; background: var(--bg-card); }
+.s i { display: block; height: 70px; }
+.s p { padding: 10px 12px; font: 500 13px "Geist Mono", monospace; color: var(--text-secondary); line-height: 1.5; }
+.s p b { color: var(--text-primary); font-family: "Geist", sans-serif; font-weight: 500; font-size: 14px; }
+.comp { margin-top: 34px; display: flex; gap: 18px; align-items: center; }
+.btn { height: 52px; padding: 0 26px; border-radius: 14px; display: inline-flex; align-items: center; font-weight: 600; font-size: 17px; }
+.primary { background: var(--accent-green); color: #fff; }
+.secondary { background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-default); }
+.card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: 14px; padding: 14px 18px; min-width: 300px; }
+.card b { display: block; font-size: 17px; font-weight: 500; }
+.card span { font-size: 14px; color: var(--text-secondary); }
+.chip { font-size: 12px; font-weight: 700; color: var(--accent-green); letter-spacing: .1em; }
+.step { display: inline-flex; gap: 10px; align-items: center; }
+.step i { width: 52px; height: 52px; border-radius: 14px; background: var(--bg-input); display: grid; place-items: center; font-style: normal; font-size: 24px; }
+.step b { font-size: 34px; width: 70px; text-align: center; }
+</style></head>
+<body>
+  <h2>Tokens · src/app/globals.css</h2>
+  <div class="sw">
+    <div class="s"><i style="background:var(--bg-app)"></i><p><b>bg-app</b><br>#0D1117</p></div>
+    <div class="s"><i style="background:var(--bg-card)"></i><p><b>bg-card</b><br>#161B22</p></div>
+    <div class="s"><i style="background:var(--bg-input)"></i><p><b>bg-input</b><br>#1F2937</p></div>
+    <div class="s"><i style="background:var(--text-primary)"></i><p><b>text-primary</b><br>#F9FAFB</p></div>
+    <div class="s"><i style="background:var(--text-secondary)"></i><p><b>text-secondary</b><br>#9CA3AF</p></div>
+    <div class="s"><i style="background:var(--border-default)"></i><p><b>border-default</b><br>#30363D</p></div>
+    <div class="s"><i style="background:var(--accent-green)"></i><p><b>accent-green</b><br>#10B981</p></div>
+    <div class="s"><i style="background:var(--accent-green-hover)"></i><p><b>accent-green-hover</b><br>#059669</p></div>
+    <div class="s"><i style="background:var(--status-warning)"></i><p><b>status-warning</b><br>#F59E0B</p></div>
+    <div class="s"><i style="background:var(--status-error)"></i><p><b>status-error</b><br>#EF4444</p></div>
+  </div>
+  <div class="comp">
+    <span class="btn primary">Preview workout</span>
+    <span class="btn secondary">Skip Rest</span>
+    <span class="step"><i>−</i><b>35</b><i>+</i></span>
+    <div class="card"><span class="chip">MONDAY</span><b>Pull Day</b><span>4 exercises · ~30 min</span></div>
+  </div>
+</body></html>
